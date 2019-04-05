@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>RSVP Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="icons.css">
+  <link rel="stylesheet" href="app.css">
+  <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.9.3/firebase-database.js"></script>
+</head>
+
+<body>
+  <form id="rsvpForm" method="post">
+    <fieldset>
+      <legend>RSVP Form</legend>
+      <div class="message"></div>
+      <div class="hidden" id="rowTemplate">
+        <div class="display-flex-columns">
+          <label><input type="hidden" name="id"></label>
+          <span class="add-remove">
+            <a onclick="add()" class="btn btn__add-guest"><span class="icon-plus"></span></a>
+            <a onclick="retract(this)" class="btn btn__remove-guest"><span class="icon-minus"></span></a>
+          </span>
+          <label><input type="text" name="fullName" placeholder="First &amp; Last Name"
+              onblur="checkValue(this)"></label>
+        </div>
+        <div class="guestControls">
+          <div class="attendance">
+            <label class="first"><input type="radio" name="attendance" value="1" onclick="attending(this, 1)"
+                class="form-radio"> Will Attend</label>
+            <label><input type="radio" name="attendance" value="0" onclick="attending(this, 0)" class="form-radio"> Will
+              Not Attend</label>
+          </div>
+          <div class="mealOptions">
+            <strong>Meal Choice:</strong> <br>
+            <label class="first"><input type="radio" name="mealChoice" value="salmon" class="form-radio"> Salmon</label>
+            <label><input type="radio" name="mealChoice" value="steak" class="form-radio"> Steak</a></label>
+            <label><input type="radio" name="mealChoice" value="kids" class="form-radio"> Kid's</a></label>
+            <div class="small">
+              <p><strong>Mustard Glazed Salmon</strong> <br> Buttermilk Mashed Potato, Cured Tomato, Pencil Asparagus,
+                Beechwood Mushroom</p>
+              <p><strong>Herb Crusted Strip Steak</strong> <br> Bacon Scallion Yukon Potato Hash, Broccolini and Baby
+                Carrot, Braised Cipollini, Peppercorn Glaze</p>
+              <p><strong>Kid's Menu</strong> <br> 10 years old or younger. Chicken Tenders with Fries. Sides include
+                carrots and celery sticks.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="guests"></div>
+    </fieldset>
+    <input type="submit" value="Complete RSVP" disabled>
+  </form>
+  <script src="app.js"></script>
+</body>
+
+</html>
