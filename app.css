@@ -135,7 +135,7 @@ input[type="submit"]:disabled {
 .small {
   font-size: .85em;
 }
-.success {
+.message {
   background-color: #19a974;
   border-color: 1px solid #137752;
   color: #333;
