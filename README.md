@@ -1,4 +1,4 @@
-# RSVP-Form
+# RSVP Form
 An RSVP Form made with VanillaJS for Firebase DB
 
 ## How To Use
