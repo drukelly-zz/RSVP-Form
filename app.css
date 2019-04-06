@@ -1,3 +1,14 @@
+/* color variables */
+:root {
+  --blue: #357edd;
+  --border-green: #137752;
+  --dark-gray: #666;
+  --eee: #eee;
+  --gray: #ccc;
+  --green: #19a974;
+  --offwhite: #f1f1f1;
+  --white: #f7f7f7;
+}
 /* global */
 * {
   box-sizing: border-box;
@@ -44,7 +55,7 @@ input {
   padding-left: 0;
 }
 .inputRow {
-  border-top: 1px solid #f1f1f1;
+  border-top: 1px solid var(--offwhite);
   margin: 0 0 1em;
   padding: 1.75em 0 1em;
 }
@@ -54,7 +65,7 @@ input {
   padding-top: 0;
 }
 input[type="text"] {
-  border: 1px solid #ccc;
+  border: 1px solid var(--gray);
   margin-left: .7em;
   padding: 5px;
 }
@@ -82,7 +93,7 @@ input[type="text"] {
 /* add/remove guests controls */
 .btn {
   border-radius: 100%;
-  color: #f7f7f7;
+  color: var(--white);
   cursor: pointer;
   display: inline-block;
   height: 30px;
@@ -96,10 +107,10 @@ input[type="text"] {
   opacity: .5;
 }
 .btn__add-guest {
-  background-color: #357edd;
+  background-color: var(--blue);
 }
 .btn__remove-guest {
-  background-color: #ff4136;
+  background-color: var(--red);
 }
 .btn__add-guest,
 .first .btn__remove-guest {
@@ -110,15 +121,15 @@ input[type="text"] {
 }
 input[type="submit"] {
   background-color: slateblue;
-  color: #f1f1f1;
+  color: var(--offwhite);
   font-size: 1.5em;
   margin: 1em 0 0;
   padding: .33em;
   width: 100%;
 }
 input[type="submit"]:disabled {
-  background-color: #ccc;
-  color: #eee;
+  background-color: var(--gray);
+  color: var(--eee);
 }
 /* utility classes */
 .display-flex-columns {
@@ -136,17 +147,17 @@ input[type="submit"]:disabled {
   font-size: .85em;
 }
 .message {
-  background-color: #19a974;
-  border-color: 1px solid #137752;
-  color: #333;
+  background-color: var(--green);
+  border-color: 1px solid var(--border-green);
+  color: var(--offwhite);
   padding: .75em 1em;
   margin-bottom: 1.5em;
 }
 /* custom input radio styling */
 .form-radio {
-  background-color: #f1f1f1;
+  background-color: var(--offwhite);
   border-radius: 100%;
-  color: #666;
+  color: var(--dark-gray);
   cursor: pointer;
   display: inline-block;
   height: 30px;
@@ -165,10 +176,10 @@ input[type="submit"]:disabled {
   transform: rotate(40deg);
 }
 .form-radio:hover {
-  background-color: #f7f7f7;
+  background-color: var(--white);
 }
 .form-radio:checked {
-  background-color: #f1f1f1;
+  background-color: var(--offwhite);
 }
 /* disable zooming */
 @media screen and (-webkit-min-device-pixel-ratio:0) { 
